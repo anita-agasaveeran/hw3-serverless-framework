@@ -1,0 +1,18 @@
+{
+    "version": "0",
+    "id": "e684fe8a-3c47-d557-5e98-09c8be7860e0",
+    "detail-type": "address.added",
+    "source": "customer-profile",
+    "account": "480967633676",
+    "time": "2023-04-25T01:53:13Z",
+    "region": "us-east-1",
+    "resources": [],
+    "detail": {
+        "line1": "123 Main",
+        "line2": "Suite 100",
+        "city": "Seattle",
+        "stateProvince": "WA",
+        "postal": "12345",
+        "userId": "692c7ba9-1107-4914-be74-7a408fa7102d"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "data": {
+        "orderId": "2",
+        "restaurantId": "2",
+        "totalAmount": "32.97",
+        "orderItems": [
+            {
+                "name": "spaghetti carbonara",
+                "price": "9.99",
+                "id": "1",
+                "quantity": "1"
+            },
+            {
+                "name": "Spaghetti aglio e olio",
+                "price": "8.99",
+                "id": "2",
+                "quantity": "2"
+            },
+            {
+                "name": "Gorgeous Cotton Pizza",
+                "price": "5",
+                "id": "10",
+                "quantity": "1"
+            }
+        ],
+        "status": "ACKNOWLEDGED",
+        "orderTime": "2023-04-05T21:11:21.300436"
+    }
+}

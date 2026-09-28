@@ -1,0 +1,9 @@
+{
+    "restaurantId": 1,
+    "orderId": "O2",
+    "orderItems": [
+        "Chicken Sharma",
+        "Fries"
+    ],
+    "totalAmount": 19.97
+}

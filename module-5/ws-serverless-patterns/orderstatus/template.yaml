@@ -1,0 +1,67 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  SAM Template for ws-serverless-patterns-polling
+
+Globals:
+  Function:
+    Timeout: 15
+    Tracing: Active
+    Layers:
+      - !Sub arn:aws:lambda:${AWS::Region}:017000801446:layer:AWSLambdaPowertoolsPython:20
+
+Parameters:
+  OrdersTablename:
+    Type: String
+    Description: OrdersTable name for Orders table in Orders module
+    
+  UserPool:
+    Type: String
+    Description: User Pool Id from users module
+    
+  Stage:
+    Type: String
+    Default: dev
+
+Resources:
+  RestaurantBus:
+    Type: AWS::Events::EventBus
+    Properties:
+      Name: !Sub "Orders-${Stage}"
+  UpdateOrderStatusFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/api/update_order_status.lambda_handler
+      Runtime: python3.12
+      Tracing: Active
+      Tags:
+        Stack: !Sub ${AWS::StackName}
+      Policies:
+        DynamoDBCrudPolicy:
+          TableName: !Ref OrdersTablename
+      Environment:
+        Variables:
+          ORDERS_TABLE_NAME: !Ref OrdersTablename
+          POWERTOOLS_SERVICE_NAME: serverless-workshop
+      Events:
+        OrderUpdate:
+          Type: EventBridgeRule
+          Properties:
+            EventBusName: !Ref RestaurantBus
+            Pattern:
+              source: 
+                - restaurant
+              detail-type:
+                - order.updated
+
+Outputs:
+
+  RestaurantBusName:
+   Description: "Name of Restaurant EventBridge Bus"
+   Value: !Ref RestaurantBus
+  
+  OrdersTablename:
+    Value: !Ref OrdersTablename
+ 
+  UserPool:
+    Value: !Ref UserPool

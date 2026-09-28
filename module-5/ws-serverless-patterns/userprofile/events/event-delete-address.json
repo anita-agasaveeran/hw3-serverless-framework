@@ -1,0 +1,14 @@
+{
+    "version": "0",
+    "id": "d9d8e295-d075-1837-0fd7-afeef73bcc18",
+    "detail-type": "address.deleted",
+    "source": "customer-profile",
+    "account": "480967633676",
+    "time": "2023-05-01T18:37:49Z",
+    "region": "us-east-1",
+    "resources": "[]",
+    "detail": {
+        "userId": "6078ebba44d",
+        "addressId": "67cd48f85bbc5c353d"
+    }
+}

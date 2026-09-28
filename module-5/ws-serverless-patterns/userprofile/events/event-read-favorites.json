@@ -1,0 +1,10 @@
+{
+    "requestContext": {
+      "authorizer": {
+        "claims": {
+          "sub": "788993909" 
+        }
+      }
+    }
+  }
+  

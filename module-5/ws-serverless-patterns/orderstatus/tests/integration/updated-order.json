@@ -1,0 +1,12 @@
+{
+    "orderId": "2",
+    "totalAmount": "150",
+    "Status": "COMPLETE",
+    "timestamp": "2023-04-05T21:45:21.300436",
+    "OrderTime": "10",
+    "restaurantId": "dunkin98",
+    "OrderItems": [
+        "Chicken Sharma",
+        "Fries"
+    ]
+}

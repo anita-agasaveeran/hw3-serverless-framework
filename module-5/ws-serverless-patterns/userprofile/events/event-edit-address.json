@@ -1,0 +1,19 @@
+{
+    "version": "0",
+    "id": "f12563a8-4c57-b140-92ae-21c04a90b052",
+    "detail-type": "address.updated",
+    "source": "customer-profile",
+    "account": "999999999",
+    "time": "2023-05-01T19:54:58Z",
+    "region": "us-east-1",
+    "resources": [],
+    "detail": {
+        "line1": "456 Main",
+        "line2": "Suite 200",
+        "city": "Elttaes",
+        "stateProvince": "AW",
+        "postal": "54321",
+        "userId": "6078ebba44d",
+        "addressId": "67cd48f85bbc5c353d"
+    }
+}
