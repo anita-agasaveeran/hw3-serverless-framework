@@ -1,0 +1,35 @@
+import os
+import uuid
+import boto3
+
+TABLE_NAME = os.environ["TABLE_NAME"]
+
+dynamodb = boto3.resource("dynamodb")
+table = dynamodb.Table(TABLE_NAME)
+
+def lambda_handler(event, context):
+    detail = event.get("detail", {})
+
+    user_id = detail.get("userId")
+
+    if not user_id:
+        raise ValueError("Missing userId")
+
+    address_id = str(uuid.uuid4())
+
+    item = {
+        "user_id": user_id,
+        "address_id": address_id,
+        "line1": detail.get("line1"),
+        "line2": detail.get("line2"),
+        "city": detail.get("city"),
+        "stateProvince": detail.get("stateProvince"),
+        "postal": detail.get("postal")
+    }
+
+    table.put_item(Item=item)
+
+    return {
+        "statusCode": 200,
+        "body": "Address added successfully"
+    }
