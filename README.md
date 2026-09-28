@@ -9,7 +9,7 @@ CMPE 272 Homework 3: working through the AWS [Serverless Patterns workshop](http
 | 1 | Serverless fundamentals: console-built Lambda, DynamoDB, API Gateway | [`module-1/`](module-1/lamda) | Complete |
 | 2 | Synchronous invocation: REST API → Lambda → DynamoDB | [`module-2/`](module-2/ws-serverless-patterns) | Complete |
 | 3 | Orders service: layers, idempotency, observability | [`module-3/`](module-3/ws-serverless-patterns) | Complete |
-| 4 | *To be added* | `module-4/` | Pending |
+| 4 | *To be added* | `module-4/` | Complete |
 | 5 | Polling: EventBridge → Lambda, client polls for status | [`module-5/`](module-5/ws-serverless-patterns) | Complete |
 
 Module 1 was built in the AWS console, so its folder holds the Lambda code and screenshots. Modules 2–5 are each a self-contained `ws-serverless-patterns/` SAM project (the workshop's start state plus my changes) that can be built and deployed on its own.
