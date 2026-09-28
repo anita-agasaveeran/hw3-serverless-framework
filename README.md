@@ -6,14 +6,30 @@ CMPE 272 Homework 3: working through the AWS [Serverless Patterns workshop](http
 
 | Module | Pattern | Folder | Status |
 |---|---|---|---|
-| 2 | Synchronous invocation: REST API → Lambda → DynamoDB | [`module-2/`](module-2/ws-serverless-patterns) | ✅ |
-| 3 | Orders service: layers, idempotency, observability | [`module-3/`](module-3/ws-serverless-patterns) | ✅ |
-| 4 | *To be added* | `module-4/` | ⏳ |
-| 5 | Polling: EventBridge → Lambda, client polls for status | [`module-5/`](module-5/ws-serverless-patterns) | ✅ |
+| 1 | Serverless fundamentals: console-built Lambda, DynamoDB, API Gateway | [`module-1/`](module-1/lamda) | Complete |
+| 2 | Synchronous invocation: REST API → Lambda → DynamoDB | [`module-2/`](module-2/ws-serverless-patterns) | Complete |
+| 3 | Orders service: layers, idempotency, observability | [`module-3/`](module-3/ws-serverless-patterns) | Complete |
+| 4 | *To be added* | `module-4/` | Pending |
+| 5 | Polling: EventBridge → Lambda, client polls for status | [`module-5/`](module-5/ws-serverless-patterns) | Complete |
 
-Each module folder is a self-contained `ws-serverless-patterns/` project (the workshop's start state plus my changes), so it can be built and deployed on its own.
+Module 1 was built in the AWS console, so its folder holds the Lambda code and screenshots. Modules 2–5 are each a self-contained `ws-serverless-patterns/` SAM project (the workshop's start state plus my changes) that can be built and deployed on its own.
 
 ---
+
+### Module 1 – Serverless Fundamentals
+
+[`module-1/lamda`](module-1/lamda) · [screenshots](module-1/lamda/screenshots)
+
+An introduction to the core building blocks, created by hand in the AWS console:
+
+| Function | What it does |
+|---|---|
+| [`hello_lambda.py`](module-1/lamda/hello_lambda.py) | A basic Lambda that returns `"Hello from Lambda!"` |
+| [`order_line_item.py`](module-1/lamda/order_line_item.py) | Returns a mock order line item as JSON |
+| [`sample_data.py`](module-1/lamda/sample_data.py) | Batch-writes three sample users into the `serverless_workshop_intro` DynamoDB table |
+| [`get_users.py`](module-1/lamda/get_users.py) | Scans `serverless_workshop_intro` and returns all users. It's exposed through an API Gateway endpoint. |
+
+The `screenshots/` folder shows each function's test run, the sample-data execution, and the API Gateway test and response.
 
 ### Module 2 – Synchronous Invocation
 
